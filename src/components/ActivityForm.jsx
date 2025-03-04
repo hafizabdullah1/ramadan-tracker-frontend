@@ -104,7 +104,7 @@ function ActivityForm({ day, activities, setActivities, onClose, getActivities }
         const requiredFields = [
             formData.fajr.time, formData.zohar.time, formData.asar.time, formData.maghrib.time,
             formData.isha.time, formData.roza.status, formData.quranPages.count,
-            formData.sadqa.status, formData.taraweeh.count
+            formData.sadqa.status,
         ];
 
         const isValid = requiredFields.every(field => field !== '' && field !== undefined);
@@ -267,6 +267,7 @@ function ActivityForm({ day, activities, setActivities, onClose, getActivities }
                                 className="w-full p-2 bg-white/5 border border-[#ffd700]/30 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] text-white custom-select"
                             >
                                 <option value="" className="text-[#ffd700]/50">Select Count</option>
+                                <option value="0" className="text-black">0 Rakat</option>
                                 <option value="2" className="text-black">2 Rakat</option>
                                 <option value="4" className="text-black">4 Rakat</option>
                                 <option value="6" className="text-black">6 Rakat</option>

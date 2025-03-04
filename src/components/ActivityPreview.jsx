@@ -9,7 +9,7 @@ const ActivityPreview = ({ activity, onClose }) => {
     };
 
     return (
-        <div className="space-y-6 text-[#ffd700]">
+        <div className="space-y-6 px-2 text-[#ffd700] max-h-[80vh] overflow-y-auto">
             <div className="text-center mb-6">
                 <FaMosque className="h-12 w-12 text-[#ffd700] mx-auto mb-4" />
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-[#d4af37] to-[#ffd700] bg-clip-text text-transparent">

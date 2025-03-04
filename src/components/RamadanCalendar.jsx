@@ -54,9 +54,9 @@ const RamadanCalendar = () => {
     }, [])
 
     const calculatePoints = () => {
-        return allActivities && allActivities?.reduce((sum, acc) => {
+        return Array.isArray(allActivities) ? allActivities.reduce((sum, acc) => {
             return sum += acc.points;
-        }, 0)
+        }, 0) : 0;
     };
 
     const handleDayClick = (day) => {
