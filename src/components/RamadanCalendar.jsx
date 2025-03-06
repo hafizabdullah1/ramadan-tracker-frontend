@@ -70,9 +70,9 @@ const RamadanCalendar = () => {
     const renderCalendarDays = () => {
         return Array.from({ length: daysInRamadan }, (_, i) => {
             const day = i + 1;
-            const isLogged = allActivities[day - 1];
+            const isLogged = Array.isArray(allActivities) && allActivities.some(activity => activity.ramadan_day === day);
             const isDisabled = day > currentDay;
-            const isToday = day === currentDay;
+            const isToday = day === currentDay;            
 
             return (
                 <div
@@ -100,7 +100,6 @@ const RamadanCalendar = () => {
             );
         });
     };
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#0a3a4d] via-[#1a5f6e] to-[#2d8579] p-4">
             {/* Header Section */}
@@ -148,9 +147,9 @@ const RamadanCalendar = () => {
             {selectedDay && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
                     <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 w-full max-w-md shadow-2xl">
-                        {allActivities[selectedDay - 1] ? (
+                        {allActivities.find(activity => activity.ramadan_day === selectedDay) ? (
                             <ActivityPreview
-                                activity={allActivities[selectedDay - 1]}
+                                activity={allActivities.find(activity => activity.ramadan_day === selectedDay)}
                                 onClose={handleClosePopup}
                             />
                         ) : (

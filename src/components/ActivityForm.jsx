@@ -232,7 +232,7 @@ function ActivityForm({ day, activities, setActivities, onClose, getActivities }
                             <input
                                 type="number"
                                 name="quranPages"
-                                value={formData.quranPages.count}
+                                value={formData.quranPages?.count}
                                 onChange={handleChange}
                                 min="0"
                                 className="w-full p-2 bg-white/5 border border-[#ffd700]/30 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] text-white"
@@ -280,7 +280,7 @@ function ActivityForm({ day, activities, setActivities, onClose, getActivities }
                             <input
                                 type="checkbox"
                                 name="extraGoodDeeds"
-                                checked={formData.extraGoodDeeds.status}
+                                checked={formData?.extraGoodDeeds?.status}
                                 onChange={handleChange}
                                 className="h-4 w-4 text-[#d4af37] focus:ring-[#d4af37] border-[#ffd700]/30 rounded"
                             />
